@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2015-11-18T04:29:52">
+<Countries>
+<CountryName>Russia</CountryName>
+<Abbr>ru</Abbr>
+<PhoneNoFormat>###-##-##</PhoneNoFormat>
+<ID>59598-1236-44</ID>
+</Countries>
+<Countries>
+<CountryName>France</CountryName>
+<Abbr>fr</Abbr>
+<ID>34643-4636-37</ID>
+</Countries>
+<Countries>
+<CountryName>USA</CountryName>
+<Abbr>us</Abbr>
+<ID>7855-4445-552</ID>
+</Countries>
+<Countries>
+<CountryName>Great Britain</CountryName>
+<Abbr>en</Abbr>
+<PhoneNoFormat>####-##-#</PhoneNoFormat>
+<ID>67567-46456-567</ID>
+</Countries>
+<Countries>
+<CountryName>China</CountryName>
+<Abbr>ch</Abbr>
+<ID>3636-346363-3</ID>
+</Countries>
+</dataroot>
