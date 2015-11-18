@@ -1,0 +1,1514 @@
+utka@iisa MINGW64 ~
+$ pwd
+/c/Users/Alisa
+
+utka@iisa MINGW64 ~
+$ git config --global user.name "Alisa Pugacheva"
+
+utka@iisa MINGW64 ~
+$ git config --global user.email alisapugacheva@ya.ru
+
+utka@iisa MINGW64 ~
+$ pwd
+/c/Users/Alisa
+
+utka@iisa MINGW64 ~
+$ /c
+bash: /c: Is a directory
+
+utka@iisa MINGW64 ~
+$ cd /c
+
+utka@iisa MINGW64 /c
+$ cd /
+bin/               git-bash.exe       proc/              unins000.exe
+cmd/               git-cmd.exe        ReleaseNotes.html  usr/
+dev/               LICENSE.txt        tmp/
+etc/               mingw64/           unins000.dat
+
+utka@iisa MINGW64 /c
+$ cd /d
+
+utka@iisa MINGW64 /d
+$ pwd
+/d
+
+utka@iisa MINGW64 /d
+$ mkdir git
+mkdir: cannot create directory ‘git’: File exists
+
+utka@iisa MINGW64 /d
+$ mkdir test
+
+utka@iisa MINGW64 /d
+$ cd test/
+
+utka@iisa MINGW64 /d/test
+$ git init
+Initialized empty Git repository in D:/test/.git/
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "test" >> foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git st
+git: 'st' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        status
+        reset
+        stage
+        stash
+        svn
+
+utka@iisa MINGW64 /d/test (master)
+$ git sta
+stage    stash    status
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        foo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "asdasd" >> foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   foo.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ git add foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git st
+git: 'st' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        status
+        reset
+        stage
+        stash
+        svn
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "init commit"
+[master (root-commit) 1526d61] init commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git log
+commit 1526d612b212971c21a4655eb9b4d84860593357
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:32:32 2015 +0300
+
+    init commit
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "sdfsdf" >> foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "sdfsdf" >> foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git add foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset HEAD foo.txt
+Unstaged changes after reset:
+M       foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master)
+$ git stash
+Saved working directory and index state WIP on master: 1526d61 init commit
+HEAD is now at 1526d61 init commit
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git stash list
+stash@{0}: WIP on master: 1526d61 init commit
+
+utka@iisa MINGW64 /d/test (master)
+$ git stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (dfa28c79b7459f4ffbbd660017b0c96525c8eff9)
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "second"
+[master 35bc426] second
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git log
+commit 35bc426abf2af34898f1777c697d6fa1aa9cf3e9
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:42:41 2015 +0300
+
+    second
+
+commit 1526d612b212971c21a4655eb9b4d84860593357
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:32:32 2015 +0300
+
+    init commit
+
+utka@iisa MINGW64 /d/test (master)
+$ ssh
+ssh.exe          ssh-agent.exe    sshd.exe         ssh-keyscan.exe
+ssh-add.exe      ssh-copy-id      ssh-keygen.exe
+
+utka@iisa MINGW64 /d/test (master)
+$ ssh
+ssh.exe          ssh-agent.exe    sshd.exe         ssh-keyscan.exe
+ssh-add.exe      ssh-copy-id      ssh-keygen.exe
+
+utka@iisa MINGW64 /d/test (master)
+$ ssh-keygen.exe
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Alisa/.ssh/id_rsa):
+Created directory '/c/Users/Alisa/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Alisa/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Alisa/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:PxRFp84uOQTlMNFvkSRyvguNEtR8flcYF5ZGA2Dux38 utka@iisa
+The key's randomart image is:
++---[RSA 2048]----+
+|      .o=o+==o=B+|
+|     .  oO=oooo+o|
+|      . .o+o.... |
+|       . +o== .  |
+|      . S =+o+   |
+|       . = +. .  |
+|          B .  .E|
+|           +    .|
+|                 |
++----[SHA256]-----+
+
+utka@iisa MINGW64 /d/test (master)
+$ less /c/Users/Alisa/.ssh/id_rsa.pub
+
+utka@iisa MINGW64 /d/test (master)
+$ git remote add origin https://github.com/alisa-ludezh/foo.git
+
+utka@iisa MINGW64 /d/test (master)
+$ git remote
+origin
+
+utka@iisa MINGW64 /d/test (master)
+$ git push -u origin master
+error: unable to read askpass response from 'D:/Git/mingw64/libexec/git-core/git-gui--askpass'
+Username for 'https://github.com':
+
+utka@iisa MINGW64 /d/test (master)
+$ git remote
+add            remove         set-branches   set-url        update
+prune          rename         set-head       show
+
+utka@iisa MINGW64 /d/test (master)
+$ git remote remove origin
+
+utka@iisa MINGW64 /d/test (master)
+$ git remote add origin git@github.com:alisa-ludezh/foo.git
+
+utka@iisa MINGW64 /d/test (master)
+$ git push -u origin master
+The authenticity of host 'github.com (192.30.252.130)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.130' (RSA) to the list of known hosts.
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 449 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+utka@iisa MINGW64 /d/test (master)
+$ git fetch
+Warning: Permanently added the RSA host key for IP address '192.30.252.129' to the list of known hosts.
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:alisa-ludezh/foo
+   35bc426..d9c0306  master     -> origin/master
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull
+Updating 35bc426..d9c0306
+Fast-forward
+ foo.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Warning: Permanently added the RSA host key for IP address '192.30.252.128' to the list of known hosts.
+Everything up-to-date
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global push.default simple
+
+utka@iisa MINGW64 /d/test (master)
+$ vi
+vi                  viewprov.dll        virtdisk.dll
+vidcap.ax           vim.exe             virtualenv.exe
+VIDRESZR.DLL        vimdiff.exe         virtualenv-3.4.exe
+view.exe            vimtutor
+
+utka@iisa MINGW64 /d/test (master)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "edit"
+[master 8df89fc] edit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+To git@github.com:alisa-ludezh/foo.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:alisa-ludezh/foo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:alisa-ludezh/foo
+   d9c0306..07e2cc6  master     -> origin/master
+Auto-merging foo.txt
+Merge made by the 'recursive' strategy.
+ foo.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 559 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   07e2cc6..2d2d975  master -> master
+
+utka@iisa MINGW64 /d/test (master)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "another edit"
+[master ce32e62] another edit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull --rebase
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:alisa-ludezh/foo
+   2d2d975..92f0e4a  master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: another edit
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   92f0e4a..2ce6f06  master -> master
+
+utka@iisa MINGW64 /d/test (master)
+$ gitk
+
+utka@iisa MINGW64 /d/test (master)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "another local changes"
+[master dbb0ca0] another local changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull --rebase
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+Unpacking objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+From github.com:alisa-ludezh/foo
+   2ce6f06..eb33803  master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: another local changes
+Using index info to reconstruct a base tree...
+M       foo.txt
+Falling back to patching base and 3-way merge...
+Auto-merging foo.txt
+CONFLICT (content): Merge conflict in foo.txt
+error: Failed to merge in the changes.
+Patch failed at 0001 another local changes
+The copy of the patch that failed is found in: .git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+
+utka@iisa MINGW64 /d/test (master|REBASE 1/1)
+$ git rebase --abort
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull
+Auto-merging foo.txt
+CONFLICT (content): Merge conflict in foo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ kd
+kd.dll               kd_02_19a2.dll       kdnet.dll
+kd_02_10df.dll       kd_02_8086.dll       kdnet_uart16550.dll
+kd_02_10ec.dll       kd_07_1415.dll       KdsCli.dll
+kd_02_1137.dll       kd_0C_8086.dll       kdstub.dll
+kd_02_14e4.dll       kd1394.dll           kdusb.dll
+kd_02_15b3.dll       kdcom.dll
+kd_02_1969.dll       kdhv1394.dll
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git branch
+* master
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git branch --all
+* master
+  remotes/origin/master
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   foo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        foo.txt.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ rm foo.txt
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git st
+git: 'st' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        status
+        reset
+        stage
+        stash
+        svn
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    foo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        foo.txt.orig
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git checkout foo.txt
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        foo.txt.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ rm foo.txt.orig
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master|MERGING)
+$ git commit
+[master b604dad] Merge branch 'master' of github.com:alisa-ludezh/foo
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+Warning: Permanently added the RSA host key for IP address '192.30.252.131' to the list of known hosts.
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 448 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   eb33803..b604dad  master -> master
+
+utka@iisa MINGW64 /d/test (master)
+$ git log
+commit b604dad986ea22587db24d100eae1a5b84c4a316
+Merge: dbb0ca0 eb33803
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:23:46 2015 +0300
+
+    Merge branch 'master' of github.com:alisa-ludezh/foo
+
+commit dbb0ca0fe06eddf3127834d3729a204c5b781d44
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:06:57 2015 +0300
+
+    another local changes
+
+commit eb338036d4b09c6edc8f83374b6a5bf18ed60fa3
+Author: alisa-ludezh <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:04:46 2015 +0300
+
+    Update foo.txt
+
+commit 2ce6f0675fad0107c18cd420d3e06ca17f354880
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:02:17 2015 +0300
+
+
+utka@iisa MINGW64 /d/test (master)
+$ git branch
+* master
+
+utka@iisa MINGW64 /d/test (master)
+$ git branch dev
+
+utka@iisa MINGW64 /d/test (master)
+$ git branch
+  dev
+* master
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+utka@iisa MINGW64 /d/test (dev)
+$ git status
+On branch dev
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (dev)
+$ echo "12312" >> foo.txt
+
+utka@iisa MINGW64 /d/test (dev)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (dev)
+$ git commit -m "dev branch"
+[dev 481dbe6] dev branch
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (dev)
+$ git status
+On branch dev
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+utka@iisa MINGW64 /d/test (dev)
+$ echo "adsad" >> bar.txt
+
+utka@iisa MINGW64 /d/test (dev)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (dev)
+$ git commit -m "added bar"
+[dev 57bf960] added bar
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bar.txt
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+utka@iisa MINGW64 /d/test (master)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -m "fix"
+[master 6bcb39d] fix
+ 1 file changed, 3 insertions(+)
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+utka@iisa MINGW64 /d/test (dev)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+
+utka@iisa MINGW64 /d/test (dev)
+$ git merge master
+Auto-merging foo.txt
+CONFLICT (content): Merge conflict in foo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+utka@iisa MINGW64 /d/test (dev|MERGING)
+$ vim foo.txt
+
+utka@iisa MINGW64 /d/test (dev|MERGING)
+$ git status
+On branch dev
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+        modified:   foo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        foo.txt.orig
+
+
+utka@iisa MINGW64 /d/test (dev|MERGING)
+$ rm foo.txt.orig
+
+utka@iisa MINGW64 /d/test (dev|MERGING)
+$ git status
+On branch dev
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+        modified:   foo.txt
+
+
+utka@iisa MINGW64 /d/test (dev|MERGING)
+$ git commit
+[dev 126c9e0] Merge branch 'master' into dev
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+utka@iisa MINGW64 /d/test (master)
+$ git pull
+Already up-to-date.
+
+utka@iisa MINGW64 /d/test (master)
+$ git merge dev
+Updating 6bcb39d..126c9e0
+Fast-forward
+ bar.txt | 1 +
+ foo.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 bar.txt
+
+utka@iisa MINGW64 /d/test (master)
+$
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --help
+Launching default browser to display HTML ...
+
+utka@iisa MINGW64 /d/test (master)
+$ git push --all
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (12/12), 985 bytes | 0 bytes/s, done.
+Total 12 (delta 3), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   b604dad..126c9e0  master -> master
+ * [new branch]      dev -> dev
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+utka@iisa MINGW64 /d/test (dev)
+$ echo "sadasdasd" >> bar.txt
+
+utka@iisa MINGW64 /d/test (dev)
+$ git commit -a -m "changed bar"
+[dev 2316df6] changed bar
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (dev)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+
+utka@iisa MINGW64 /d/test (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+
+utka@iisa MINGW64 /d/test (dev)
+$ git push --set-upstream origin dev
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 285 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   126c9e0..2316df6  dev -> dev
+Branch dev set up to track remote branch dev from origin.
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "fcxvzxsdf" >> bar.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -a -m "foo changed"
+[master 46bd3de] foo changed
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   126c9e0..46bd3de  master -> master
+
+utka@iisa MINGW64 /d/test (master)
+$ git branch --all
+  dev
+* master
+  remotes/origin/dev
+  remotes/origin/master
+
+utka@iisa MINGW64 /d/test (master)
+$ git tag --help
+Launching default browser to display HTML ...
+
+utka@iisa MINGW64 /d/test (master)
+$ git tag -a 0.1
+fatal: no tag message?
+
+utka@iisa MINGW64 /d/test (master)
+$ git tag -a 0.1
+
+utka@iisa MINGW64 /d/test (master)
+$ git tag
+0.1
+
+utka@iisa MINGW64 /d/test (master)
+$ git push --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 159 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+ * [new tag]         0.1 -> 0.1
+
+utka@iisa MINGW64 /d/test (master)
+$ echo "asdad" >> foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -a "asdadasd"
+fatal: Paths with -a does not make sense.
+
+utka@iisa MINGW64 /d/test (master)
+$ git commit -a -m "asdadasd"
+[master 7015849] asdadasd
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (master)
+$ git che
+checkout      cherry        cherry-pick
+
+utka@iisa MINGW64 /d/test (master)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up-to-date with 'origin/dev'.
+
+utka@iisa MINGW64 /d/test (dev)
+$ echo "sadasd" >> bar.txt
+
+utka@iisa MINGW64 /d/test (dev)
+$ git commit -a -m "asdd"
+[dev d24873c] asdd
+ 1 file changed, 1 insertion(+)
+
+utka@iisa MINGW64 /d/test (dev)
+$ git push --all
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 552 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To git@github.com:alisa-ludezh/foo.git
+   2316df6..d24873c  dev -> dev
+   46bd3de..7015849  master -> master
+
+utka@iisa MINGW64 /d/test (dev)
+$ git log
+commit d24873c2d547e5a7e6e8a3d2a476aefe7461c1c3
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Wed Nov 18 00:13:27 2015 +0300
+
+    asdd
+
+commit 2316df623199c4f87402e31f342d6142544b1986
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Wed Nov 18 00:03:31 2015 +0300
+
+    changed bar
+
+commit 126c9e060deb9e987608c336b9b60330d12bc24d
+Merge: 57bf960 6bcb39d
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:59:12 2015 +0300
+
+    Merge branch 'master' into dev
+
+commit 6bcb39d7f986215fb3a982867a527d7be20ffcf2
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:54:23 2015 +0300
+
+
+utka@iisa MINGW64 /d/test (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+utka@iisa MINGW64 /d/test (master)
+$ git log
+commit 70158495f55bfa23a82551c8b7f9cd64d5035dbe
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Wed Nov 18 00:12:51 2015 +0300
+
+    asdadasd
+
+commit 46bd3dead19be35b5b826cbd6ce4ad695f222ec1
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Wed Nov 18 00:06:38 2015 +0300
+
+    foo changed
+
+commit 126c9e060deb9e987608c336b9b60330d12bc24d
+Merge: 57bf960 6bcb39d
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:59:12 2015 +0300
+
+    Merge branch 'master' into dev
+
+commit 6bcb39d7f986215fb3a982867a527d7be20ffcf2
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:54:23 2015 +0300
+
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.co checkout
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.br branch
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.ci commit
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.st status
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.gr "lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+utka@iisa MINGW64 /d/test (master)
+$ git gr
+Expansion of alias 'gr' failed; 'lg1' is not a git command
+
+utka@iisa MINGW64 /d/test (master)
+$ git config --global alias.gr "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+utka@iisa MINGW64 /d/test (master)
+$ git gr
+* d24873c - (9 minutes ago) asdd - Alisa Pugacheva (origin/dev, dev)
+* 2316df6 - (19 minutes ago) changed bar - Alisa Pugacheva
+| * 7015849 - (9 minutes ago) asdadasd - Alisa Pugacheva (HEAD -> master, origin/master)
+| * 46bd3de - (15 minutes ago) foo changed - Alisa Pugacheva (tag: 0.1)
+|/
+*   126c9e0 - (23 minutes ago) Merge branch 'master' into dev - Alisa Pugacheva
+|\
+| * 6bcb39d - (28 minutes ago) fix - Alisa Pugacheva
+* | 57bf960 - (34 minutes ago) added bar - Alisa Pugacheva
+* | 481dbe6 - (36 minutes ago) dev branch - Alisa Pugacheva
+|/
+*   b604dad - (58 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/foo - Alisa Pugacheva
+|\
+| * eb33803 - (77 minutes ago) Update foo.txt - alisa-ludezh
+* | dbb0ca0 - (75 minutes ago) another local changes - Alisa Pugacheva
+|/
+* 2ce6f06 - (80 minutes ago) another edit - Alisa Pugacheva
+* 92f0e4a - (82 minutes ago) Update foo.txt - alisa-ludezh
+*   2d2d975 - (83 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/foo - Alisa Pugacheva
+|\
+:...skipping...
+* d24873c - (9 minutes ago) asdd - Alisa Pugacheva (origin/dev, dev)
+* 2316df6 - (19 minutes ago) changed bar - Alisa Pugacheva
+| * 7015849 - (9 minutes ago) asdadasd - Alisa Pugacheva (HEAD -> master, origin
+| * 46bd3de - (15 minutes ago) foo changed - Alisa Pugacheva (tag: 0.1)
+|/
+*   126c9e0 - (23 minutes ago) Merge branch 'master' into dev - Alisa Pugacheva
+|\
+| * 6bcb39d - (28 minutes ago) fix - Alisa Pugacheva
+* | 57bf960 - (34 minutes ago) added bar - Alisa Pugacheva
+* | 481dbe6 - (36 minutes ago) dev branch - Alisa Pugacheva
+|/
+*   b604dad - (58 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/
+|\
+| * eb33803 - (77 minutes ago) Update foo.txt - alisa-ludezh
+* | dbb0ca0 - (75 minutes ago) another local changes - Alisa Pugacheva
+|/
+* 2ce6f06 - (80 minutes ago) another edit - Alisa Pugacheva
+* 92f0e4a - (82 minutes ago) Update foo.txt - alisa-ludezh
+*   2d2d975 - (83 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/
+|\
+| * 07e2cc6 - (87 minutes ago) Update foo.txt - alisa-ludezh
+* | 8df89fc - (84 minutes ago) edit - Alisa Pugacheva
+|/
+* d9c0306 - (89 minutes ago) Update foo.txt - alisa-ludezh
+* 35bc426 - (2 hours ago) second - Alisa Pugacheva
+* 1526d61 - (2 hours ago) init commit - Alisa Pugacheva
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+utka@iisa MINGW64 /d/test (master)
+$
+
+utka@iisa MINGW64 /d/test (master)
+$ git gr
+* d24873c - (9 minutes ago) asdd - Alisa Pugacheva (origin/dev, dev)
+* 2316df6 - (19 minutes ago) changed bar - Alisa Pugacheva
+| * 7015849 - (9 minutes ago) asdadasd - Alisa Pugacheva (HEAD -> master, origin
+| * 46bd3de - (16 minutes ago) foo changed - Alisa Pugacheva (tag: 0.1)
+|/
+*   126c9e0 - (23 minutes ago) Merge branch 'master' into dev - Alisa Pugacheva
+|\
+| * 6bcb39d - (28 minutes ago) fix - Alisa Pugacheva
+* | 57bf960 - (35 minutes ago) added bar - Alisa Pugacheva
+* | 481dbe6 - (37 minutes ago) dev branch - Alisa Pugacheva
+|/
+*   b604dad - (59 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/
+|\
+| * eb33803 - (78 minutes ago) Update foo.txt - alisa-ludezh
+* | dbb0ca0 - (75 minutes ago) another local changes - Alisa Pugacheva
+|/
+* 2ce6f06 - (80 minutes ago) another edit - Alisa Pugacheva
+* 92f0e4a - (82 minutes ago) Update foo.txt - alisa-ludezh
+*   2d2d975 - (83 minutes ago) Merge branch 'master' of github.com:alisa-ludezh/
+|\
+| * 07e2cc6 - (87 minutes ago) Update foo.txt - alisa-ludezh
+* | 8df89fc - (85 minutes ago) edit - Alisa Pugacheva
+|/
+* d9c0306 - (89 minutes ago) Update foo.txt - alisa-ludezh
+* 35bc426 - (2 hours ago) second - Alisa Pugacheva
+* 1526d61 - (2 hours ago) init commit - Alisa Pugacheva
+
+utka@iisa MINGW64 /d/test (master)
+$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+Did you mean this?
+        bisect
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --help
+Launching default browser to display HTML ...
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --soft
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --soft
+0.1             FETCH_HEAD      master          origin/dev
+dev             HEAD            ORIG_HEAD       origin/master
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --mixed
+0.1             FETCH_HEAD      master          origin/dev
+dev             HEAD            ORIG_HEAD       origin/master
+
+utka@iisa MINGW64 /d/test (master)
+$ git reset --
+.git/    bar.txt  foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$
+
+utka@iisa MINGW64 /d/test (master)
+$ ls -a
+./  ../  .git/  bar.txt  foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ cd .git/
+
+utka@iisa MINGW64 /d/test/.git (GIT_DIR!)
+$ ls -a
+./   COMMIT_EDITMSG  description  gitk.cache  hooks/  info/  objects/   refs/
+../  config          FETCH_HEAD   HEAD        index   logs/  ORIG_HEAD
+
+utka@iisa MINGW64 /d/test/.git (GIT_DIR!)
+$ cd ../
+
+utka@iisa MINGW64 /d/test (master)
+$ git log -L 2,4:foo.txt
+commit dbb0ca0fe06eddf3127834d3729a204c5b781d44
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:06:57 2015 +0300
+
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:06:57 2015 +0300
+
+    another local changes
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,3 +2,3 @@
+ asdasd
+-sdfsdf
++sdfsdasdasdasf
+ asdads
+
+commit 8df89fc30291d45b6bce048e7f2ef8fa8378f56b
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:57:37 2015 +0300
+
+    edit
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+:
+commit dbb0ca0fe06eddf3127834d3729a204c5b781d44
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:06:57 2015 +0300
+
+    another local changes
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,3 +2,3 @@
+ asdasd
+@@ -2,3 +2,3 @@
+ asdasd
+commit dbb0ca0fe06eddf3127834d3729a204c5b781d44
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 23:06:57 2015 +0300
+
+    another local changes
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,3 +2,3 @@
+ asdasd
+-sdfsdf
++sdfsdasdasdasf
+ asdads
+
+commit 8df89fc30291d45b6bce048e7f2ef8fa8378f56b
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:57:37 2015 +0300
+
+    edit
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,3 +2,3 @@
+ asdasd
+ sdfsdf
+-
++asdads
+
+commit d9c03068e70d6a40dfd6528efcd7ae51bdbd38de
+Author: alisa-ludezh <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:52:58 2015 +0300
+
+    Update foo.txt
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,2 +2,3 @@
+ asdasd
+ sdfsdf
++
+
+commit 35bc426abf2af34898f1777c697d6fa1aa9cf3e9
+Author: Alisa Pugacheva <alisapugacheva@ya.ru>
+Date:   Tue Nov 17 22:42:41 2015 +0300
+
+    second
+
+diff --git a/foo.txt b/foo.txt
+--- a/foo.txt
++++ b/foo.txt
+@@ -2,1 +2,2 @@
+ asdasd
++sdfsdf
+
+
+utka@iisa MINGW64 /d/test (master)
+$
+
+utka@iisa MINGW64 /d/test (master)
+$ vim.exe foo.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ mv foo.txt qux.txt
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    foo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        qux.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+utka@iisa MINGW64 /d/test (master)
+$ git add --all
+
+utka@iisa MINGW64 /d/test (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        renamed:    foo.txt -> qux.txt
+
+
+utka@iisa MINGW64 /d/test (master)
+$ ^C
