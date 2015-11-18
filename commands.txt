@@ -35,7 +35,7 @@ $ pwd
 
 utka@iisa MINGW64 /d
 $ mkdir git
-mkdir: cannot create directory ‘git’: File exists
+mkdir: cannot create directory â€˜gitâ€™: File exists
 
 utka@iisa MINGW64 /d
 $ mkdir test
@@ -326,7 +326,7 @@ utka@iisa MINGW64 /d/test (master)
 $ ssh-keygen.exe
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/Alisa/.ssh/id_rsa):
-Created directory '/c/Users/Alisa/.ssh'.
+Created directory '//srv-dat-03.gki.gazprom.ru/Personal$/APugacheva/Desktop/Git/.ssh' '/c/Users/APugacheva/.ssh'. 
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 Your identification has been saved in /c/Users/Alisa/.ssh/id_rsa.
@@ -359,7 +359,7 @@ origin
 utka@iisa MINGW64 /d/test (master)
 $ git push -u origin master
 error: unable to read askpass response from 'D:/Git/mingw64/libexec/git-core/git-gui--askpass'
-Username for 'https://github.com':
+Username for 'https://github.com': //**
 
 utka@iisa MINGW64 /d/test (master)
 $ git remote
