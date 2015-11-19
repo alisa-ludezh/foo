@@ -346,6 +346,8 @@ The key's randomart image is:
 |                 |
 +----[SHA256]-----+
 
+debug ssh: $ connect -d -S socks.local.net unknown.remote.outside.net 110
+
 utka@iisa MINGW64 /d/test (master)
 $ less /c/Users/Alisa/.ssh/id_rsa.pub
 
